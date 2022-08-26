@@ -1,0 +1,9 @@
+.affairsBlock {
+    margin: 30px;
+    width: 250px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
