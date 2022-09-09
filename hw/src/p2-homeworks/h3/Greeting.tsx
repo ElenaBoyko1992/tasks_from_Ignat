@@ -1,9 +1,11 @@
-import React, {ChangeEvent, KeyboardEvent} from 'react'
+import React, {KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: (e: ChangeEvent<HTMLInputElement>) => void // need to fix any
+    setNameCallback: (value: string) => void // need to fix any
     addUser: () => void // need to fix any
     error: string // need to fix any
     totalUsers: number // need to fix any
@@ -14,14 +16,25 @@ type GreetingPropsType = {
 const Greeting: React.FC<GreetingPropsType> = (
     {name, setNameCallback, addUser, error, totalUsers, enterKeyHandler} // деструктуризация пропсов
 ) => {
-    const inputClass = error ? s.error : s.grayBorder// need to fix with (?:)
 
     return (
         <div className={s.form}>
-            <input value={name} onChange={setNameCallback} className={`${inputClass} ${s.inputButtonCommonStyles} ${s.input}`} onKeyDown={enterKeyHandler}/>
-            <button onClick={addUser} className={`${s.inputButtonCommonStyles} ${s.button}`}>add</button>
-            <span className={s.totalUsers}>{totalUsers}</span>
-            <div className={s.errorText}>{error}</div>
+            <SuperInputText value={name}
+                            onChangeText={setNameCallback}
+                            className={s.superInputClass}
+                            error={error ? error : ''}
+                            onKeyPress={enterKeyHandler}
+            />
+
+            <div className={s.buttonSpanBlock}>
+                <SuperButton onClick={addUser}
+                             className={s.button}
+                             red={Boolean(error)}>
+                    add
+                </SuperButton>
+                <span className={s.totalUsers}>{totalUsers}</span>
+            </div>
+
         </div>
     )
 }

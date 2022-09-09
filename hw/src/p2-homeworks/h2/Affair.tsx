@@ -1,6 +1,7 @@
 import React, {MouseEventHandler} from 'react'
 import {AffairType} from "./HW2";
 import s from './Affair.module.css'
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type AffairPropsType = {
     // key не нужно типизировать
@@ -16,7 +17,7 @@ function Affair(props: AffairPropsType) {
     return (
         <div className={s.affair}>
             {props.affair.name} ({props.affair.priority} priority)
-            <button onClick={deleteCallback}>X</button>
+            <SuperButton onClick={deleteCallback}>X</SuperButton>
         </div>
     )
 }

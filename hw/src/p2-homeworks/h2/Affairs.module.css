@@ -6,4 +6,5 @@
 .buttons {
     display: flex;
     justify-content: space-between;
+    margin-tops: 20px;
 }

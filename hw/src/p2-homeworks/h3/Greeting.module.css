@@ -1,35 +1,8 @@
 .form {
     margin: 25px 0px 25px 25px;
-}
+    display: flex;
+    align-items: flex-start;
 
-.inputButtonCommonStyles {
-    background-color: darkgreen;
-    margin-right: 15px;
-    border-radius: 7px;
-    color: white;
-}
-
-.input {
-    padding: 5px;
-}
-
-.error {
-    border: 1px solid red;
-}
-
-.grayBorder {
-    border: 1px solid gray;
-}
-
-.button {
-    border: 1px solid gray;
-    box-shadow: 0 0 10px rgba(35, 82, 35, 0.7);
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.button:active {
-    box-shadow: 0 0 10px rgba(35, 82, 35, 1);
 }
 
 .totalUsers {
@@ -37,7 +10,18 @@
     font-weight: bold;
 }
 
-.errorText {
-    color: red;
-    height: 20px;
+.buttonSpanBlock {
+    display: flex;
+    align-items: center;
 }
+
+.superInputClass,
+.button {
+    margin-right: 15px;
+}
+
+
+
+
+
+

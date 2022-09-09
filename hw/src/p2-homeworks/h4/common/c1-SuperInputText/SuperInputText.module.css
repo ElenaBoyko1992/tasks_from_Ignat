@@ -1,5 +1,10 @@
-.superInput {
 
+.superInput {
+    display: block;
+    background-color: #2a5f2a;
+    padding: 5px;
+    border-radius: 3px;
+    color: white;
 }
 
 .errorInput {
@@ -10,3 +15,5 @@
 .error {
     color: red;
 }
+
+
